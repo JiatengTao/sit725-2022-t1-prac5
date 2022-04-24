@@ -1,6 +1,6 @@
 //test/aa.spec.js
 var assert = require('assert');
-var calc = require('../calc');
+var calc = require('../public/js/calc');
 
 describe('Calculator', function() {
   describe('add', function() {
