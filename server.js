@@ -6,6 +6,9 @@ const MongoClient = require('mongodb').MongoClient;
 let petsCollection;
 let accountsCollection;
 
+let http = require('http').createServer(app);
+let io = require('socket.io')(http);
+
 // Database Connection
 
 const uri = "mongodb+srv://"+process.env.MONGO_USER+":"+process.env.MONGO_PASSWORD+"@cluster0.kymgv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority" // replace it with the url you get from mongo atlas
@@ -119,12 +122,22 @@ app.get('/addTwoNumbers/:firstNumber/:secondNumber', function(req,res,next){
     else { res.json({result: result, statusCode: 200}).status(200) } 
   
   })
-
+  
+  io.on('connection', (socket) => {
+    console.log('a user connected', socket.id);
+    socket.on('disconnect', () => {
+      console.log('user disconnected');
+    });
+    setInterval(()=>{
+      socket.emit('number', new Date().toLocaleTimeString());
+    }, 1000);
+  
+  });
 
 var port = process.env.port || 3000;
 
-app.listen(port,()=>{
+http.listen(port,()=>{
     console.log("App running at http://localhost:"+port)
     createPets("pets")
     createAccount("accounts")
-})
+  });

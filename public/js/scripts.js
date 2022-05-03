@@ -21,6 +21,16 @@ const addAccountToApp = (account) => {
         }
     })
 }
+const backendSend = (mail) =>{
+    $.ajax({
+        url: '/email',
+        data: Boolean,
+        type: 'POST',
+        success: (result) => {
+            alert(result.message);
+        }
+    })
+}
 
 const submitImage = () => {
     let formData = {};
@@ -98,6 +108,12 @@ const logIn =(items) =>{
             }
         })
 }
+
+let socket = io();
+
+socket.on('number', (msg) => {
+    $("#pageTitle").html("Welcome to SIT 725 Week 5: "+ msg)
+})
 
 $(document).ready(function(){
     $('.materialboxed').materialbox();
