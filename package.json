@@ -1,42 +1,37 @@
 {
-  "name": "sit725-2022-t1-prac7",
-  "version": "1.0.0",
-  "description": "sit 725 week 7 prac",
-  "main": "server.js",
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "start": "node server.js",
-    "test": "nyc mocha --reporter spec"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "test:unit": "vue-cli-service test:unit"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ChoudharyNavit22/sit725-2021-t2-prac3.git"
-  },
-  "keywords": [
-    "Nodejs",
-    "Express",
-    "Materialize",
-    "HTML",
-    "JS",
-    "CSS"
-  ],
-  "author": "Navit Choudhary",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ChoudharyNavit22/sit725-2021-t2-prac3/issues"
-  },
-  "homepage": "https://github.com/ChoudharyNavit22/sit725-2021-t2-prac3#readme",
   "dependencies": {
-    "chai": "^4.3.6",
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.0",
-    "express": "^4.17.3",
-    "http": "^0.0.1-security",
-    "jquery": "^3.6.0",
-    "materialize": "^1.0.0",
-    "mocha": "^9.2.2",
-    "mongodb": "^4.4.1",
-    "nyc": "^15.1.0",
-    "request": "^2.88.2",
-    "socket.io": "^4.5.0"
-  }
+    "@element-plus/icons-vue": "^1.1.4",
+    "axios": "^0.27.2",
+    "core-js": "^3.8.3",
+    "element-plus": "^2.1.11",
+    "express": "^4.18.1",
+    "less": "^4.1.2",
+    "less-loader": "^10.2.0",
+    "vue": "^3.2.13",
+    "vue-router": "^4.0.3",
+    "vuex": "^4.0.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
+    "@vue/cli-plugin-unit-mocha": "~5.0.0",
+    "@vue/cli-plugin-vuex": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "@vue/test-utils": "^2.0.0-0",
+    "chai": "^4.2.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
 }
